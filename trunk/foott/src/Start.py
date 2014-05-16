@@ -58,18 +58,21 @@ if __name__ == '__main__':
         for a in range(1,3):
             tempEqp = raw_input("Nome da Equipe "+str(a)+": ")
             eqp = Equipe(tempEqp)
+            ##entrada do relativo peso da camisa##
             print ("Qual o peso da sua camisa? (0~10)")
             tempPeso = input("-> ")
             eqp.setPesoCamisa(tempPeso)
+            ##entrada da fase atual da equipe##
             print "Qual fase se encontra o/a "+tempEqp+" (-2/-1/0/1/2/3)"
             tempFase = input("-> ")
             eqp.setFase(tempFase)
+            ##loop para insercao dos jogadores##
             for b in range(1,4):
                 nome = raw_input("Jogador "+str(b)+": ")
                 forca = input("Forca de "+nome+": ")
                 jogador = Jogador(nome,forca)
                 eqp.addJogador(jogador)
-            ##entrada da forca do apoio da torcida##                       
+            ##entrada da forca do apoio da torcida para o time mandante##                       
             if (a==1):
                 partida.setEqp1(eqp)
                 print ("Qual o grau de apoio da torcida local? (-2/-1/0/1/2/3/4)")
