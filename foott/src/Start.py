@@ -9,7 +9,8 @@ from bean.EquipeObj import Equipe
 from bean.PartidaObj import Partida
 from util.RidAlg import RidAlg
 
-if __name__ == '__main__':
+
+if __name__ == '__main__':    
     """
     clube1 = [("Brasil A",None),("Julio",87),("Daniel",87),("Thiago",92),("David",86),("Marcelo",86),("Luis",83),\
                  ("Paulinho",84),("Oscar",85),("Neymar",89),("Fred",85),("Hulk",84)]
@@ -40,6 +41,7 @@ if __name__ == '__main__':
     else:
         print "EMPATE NESSE CARAI! --'"
     """
+    
     print "----------------- FantasyFoot -----------------"
     print"- Insira as equipes participantes da partida! -"
     print"---- obs: a primeira equipe informada sera ----\n-- considerada a anfitria (que joga em casa) --"
@@ -52,10 +54,16 @@ if __name__ == '__main__':
         ##objeto Partida instanciado##
         partida = Partida()
         
-        ##loop para insercao da equipe (nome+jogadores(nome+forca))##
+        ##loop para insercao da equipe (nome+pesoCamisa+fase+jogadores(nome+forca))##
         for a in range(1,3):
             tempEqp = raw_input("Nome da Equipe "+str(a)+": ")
-            eqp = Equipe(tempEqp)            
+            eqp = Equipe(tempEqp)
+            print ("Qual o peso da sua camisa? (0~10)")
+            tempPeso = input("-> ")
+            eqp.setPesoCamisa(tempPeso)
+            print "Qual fase se encontra o/a "+tempEqp+" (-2/-1/0/1/2/3)"
+            tempFase = input("-> ")
+            eqp.setFase(tempFase)
             for b in range(1,4):
                 nome = raw_input("Jogador "+str(b)+": ")
                 forca = input("Forca de "+nome+": ")
@@ -64,7 +72,7 @@ if __name__ == '__main__':
             ##entrada da forca do apoio da torcida##                       
             if (a==1):
                 partida.setEqp1(eqp)
-                print ("Qual o grau de apoio da torcida local? (-2/-1/0/1/2/3)")
+                print ("Qual o grau de apoio da torcida local? (-2/-1/0/1/2/3/4)")
                 apoio = input("-> ")
                 partida.setApoio(apoio)
             elif (a==2):
