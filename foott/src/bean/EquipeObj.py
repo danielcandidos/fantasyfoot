@@ -12,7 +12,8 @@ class Equipe(object):
     ##Strings## 
     nomeDaEquipe = ""
     ##Numeros##
-    pesoCamisa,fase = 0,0
+    pesoCamisa = 0
+    fase = 0
     ##Lists####
     elenco = []
     
@@ -22,6 +23,8 @@ class Equipe(object):
         '''
         self.nomeDaEquipe = nome
         self.elenco = []
+        self.pesoCamisa = 0
+        self.fase = 0
         pass
 
     def getPesoCamisa(self):

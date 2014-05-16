@@ -37,12 +37,12 @@ class RidAlg(object):
         self.dicAway['forca']=intB
         
         ##gravando o peso das camisas##
-        self.dicHome['pesoCamisa'] = self.partida.getEqp1.getPesoCamisa()
-        self.dicAway['pesoCamisa'] = self.partida.getEqp2.getPesoCamisa()
+        self.dicHome['pesoCamisa'] = self.partida.getEqp1().getPesoCamisa()
+        self.dicAway['pesoCamisa'] = self.partida.getEqp2().getPesoCamisa()
         
         ##gravando a fase das equipes##
-        self.dicHome['fase'] = self.partida.getEqp1.getFase()
-        self.dicAway['fase'] = self.partida.getEqp2.getFase()
+        self.dicHome['fase'] = self.partida.getEqp1().getFase()
+        self.dicAway['fase'] = self.partida.getEqp2().getFase()
                 
         pass
     
