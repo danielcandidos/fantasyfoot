@@ -1,0 +1,14 @@
+{% extends 'bases/base.html' %}
+{% block corpo %}
+<a href="/novo-clube/">Adicionar novo Clube</a>
+<ul>
+	{% for clube in lista_clubes %}
+		<li>
+			<a href="/remove/{{ clube.id }}/"><img src="{{ MEDIA_URL }}imagens/lixeira.png"/></a>
+			<a href="/clube/{{ clube.id }}/">{{ clube.nome }}</a>
+		</li>
+	{% empty %}
+		<li>Sem clubes cadastrados</li>	
+	{% endfor %}
+</ul>
+{% endblock %}

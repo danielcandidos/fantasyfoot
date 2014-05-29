@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<title>{% block titulo %}Fantasy Foot{% endblock %}</title>
+		<link rel="shortcut icon" href="{{ MEDIA_URL }}imagens/icone.png">
+	  	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	  	<meta http-equiv="Content-Language" content="pt-br" />
+		<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}estilo.css"/>
+	</head>
+	<body>
+		<div id="tudo">
+			<div id='bar'>
+				<div id='pagelogo'>
+					<B><strong>Fantasy Foot</strong></B>
+				</div>
+				<span class='menubar'>
+					<a href='/'>Pagina Inicial (Clubes)</a>|
+					<a href='/jogadores/'>Jogadores</a>|
+					<a href='#' title='Logue no Fantasy Foot'>Log In</a>
+				</span>
+			</div>
+			<div class="corpo">
+				{% block corpo %}
+				<!-- bloco -->
+				{% endblock %}
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,12 @@
+{% extends 'bases/base.html' %}
+{% block corpo %}
+
+<form action="" method="post">
+	<!-- comando para protecao contra ataques -->
+	{% csrf_token %}
+	{{ form.as_p }}
+	<button type="submit">Atualizar</button>
+	<a href="/novo-jogador/">Adicionar Jogador</a>
+</form>
+
+{% endblock %}
