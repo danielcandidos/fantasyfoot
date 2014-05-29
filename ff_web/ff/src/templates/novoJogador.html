@@ -1,0 +1,15 @@
+{% extends 'bases/base.html' %}
+
+{% block titulo %}Fantasy Foot - Novo Jogador{% endblock %}
+
+<!-- alterando o "corpo" herdado de base.html -->
+{% block corpo %}
+
+<form action="" method="post">
+	<!-- comando para protecao contra ataques -->
+	{% csrf_token %}
+	{{ form.as_p }}
+	<button type="submit">Adicionar</button>
+</form>
+
+{% endblock %}
