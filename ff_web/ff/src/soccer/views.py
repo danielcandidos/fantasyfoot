@@ -1,9 +1,14 @@
+# -*- coding: utf-8 -*-
+'''
+Created on 25/05/2014
+@author: Daniel
+'''
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
 from django.contrib.auth.decorators import login_required
 
 from soccer.models import Clube, Jogador
-from forms import FormClube, FormJogador
+from soccer.forms import FormClube, FormJogador
 
 ########################################################################################
 #@login_required
@@ -18,8 +23,7 @@ def homeClube (request):
 ########################################################################################
 def homeJogador (request):
     lista_jog = Jogador.objects.all()
-    for jog in lista_jog:
-        print jog.forca
+    
     return render_to_response("homeJogador.html", {'lista_jog': lista_jog},
                         context_instance=RequestContext(request))
 ########################################################################################
