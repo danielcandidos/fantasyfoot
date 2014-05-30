@@ -2,9 +2,15 @@
 	<head>
 		<title>{% block titulo %}Fantasy Foot{% endblock %}</title>
 		<link rel="shortcut icon" href="{{ MEDIA_URL }}imagens/icone.png">
-	  	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-	  	<meta http-equiv="Content-Language" content="pt-br" />
-		<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}estilo.css"/>
+		{% block meta %}
+	  	<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+	  	<meta http-equiv="Content-Language" content="pt-br"/>
+	  	<meta name="keywords" content="Futebol, Jogo, Brasfoot, Cartola, Bola, Tecnico, Jogador"/>
+  		<meta name="description" content="Game e ambiente virtual que simula, copia e recria a realidade que envolve o futebol."/>
+		{% endblock %}
+		{% block estilo %}
+		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/estilo.css">
+		{% endblock %}	
 	</head>
 	<body>
 		<div id="tudo">
